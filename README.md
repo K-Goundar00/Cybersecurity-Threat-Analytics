@@ -1,65 +1,41 @@
-# Cybersecurity Threat & Incident Analytics Dashboard
+# Cybersecurity Threat Analytics 🛡️
 
-A Python-based cybersecurity analytics dashboard for exploring security events, identifying incident patterns, and visualizing potential areas for investigation through an interactive GUI.
+### Interactive Cybersecurity Threat & Incident Analytics Dashboard
 
-## Overview
+Cybersecurity Threat Analytics is an interactive dashboard built with Python, Streamlit, Pandas, NumPy, and Plotly. The project focuses on analysing security event data, identifying potentially suspicious activity, and visualising security trends through an interactive graphical interface.
 
-This project demonstrates how Python and data analytics can support cybersecurity monitoring and incident investigation. It uses Pandas to process security event data, Plotly to create interactive visualizations, and Streamlit to provide a browser-based dashboard.
+Developed as a cybersecurity and data analytics portfolio project, it demonstrates how security logs and event records can be transformed into meaningful insights to support threat monitoring and incident investigation.
 
-The initial version uses synthetic security events for development and testing. It also supports uploading CSV files that follow the required data format.
+> **Disclaimer:** This project uses synthetic security event data for educational and demonstration purposes. Findings are not verified real-world security incidents.
 
-## Features
+## ✨ Features
 
-- **Security Metrics:** View total events, high/critical severity events, failed logins, and open or ongoing investigations.
-- **Severity Analysis:** Visualize the distribution of events by severity.
-- **Event Classification:** Identify the most frequently recorded event types.
-- **Time-Based Analysis:** Examine daily event volumes and changes in activity.
-- **Source IP Analysis:** Identify source IP addresses associated with the highest event counts.
-- **Interactive Filters:** Filter records by severity, event type, and date range.
-- **Event Explorer:** Inspect and sort individual security event records.
-- **CSV Import:** Upload compatible security event datasets.
-- **Data Export:** Download filtered events for further analysis.
-- **Initial Findings:** Display basic observations based on the selected data.
+- **Security Metrics:** View total events, high-severity events, failed logins, and open investigations.
+- **Interactive Charts:** Visualise security event distributions, trends, and patterns.
+- **Event Filtering:** Filter events by severity, event type, and date.
+- **Event Investigation:** Explore security event records and potentially suspicious activity.
+- **CSV Export:** Export filtered event data for further analysis.
+- **Synthetic Data Generation:** Generate sample security events locally for testing.
+- **CSV Import:** Support for analysing external security event datasets as the project develops.
 
-## Technology Stack
+## 🧰 Technologies Used
 
 | Technology | Purpose |
 |---|---|
-| Python | Application logic and data analysis |
-| Pandas | Data cleaning and manipulation |
+| Python | Core programming language |
+| Streamlit | Interactive dashboard interface |
+| Pandas | Data cleaning and analysis |
 | NumPy | Synthetic data generation |
-| Plotly | Interactive data visualization |
-| Streamlit | Dashboard GUI |
-| VS Code | Development environment |
+| Plotly | Interactive data visualisation |
+| Git & GitHub | Version control and project hosting |
 
-## Project Structure
-
-```text
-cybersecurity-threat-analytics/
-├── app.py
-├── requirements.txt
-├── data/
-├── src/
-├── reports/
-├── screenshots/
-├── .gitignore
-└── README.md
-```
-
-- `app.py` — Main dashboard application.
-- `requirements.txt` — Python dependencies.
-- `data/` — Location for datasets and data documentation.
-- `src/` — Additional analysis modules as the project develops.
-- `reports/` — Analysis reports and exported findings.
-- `screenshots/` — Dashboard screenshots for documentation.
-
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Windows, macOS, or Linux
-- Python 3.13
-- Visual Studio Code (recommended)
+- Python installed on Windows
+- Visual Studio Code
+- Git (optional)
 
 ### 1. Clone the repository
 
@@ -70,88 +46,99 @@ cd cybersecurity-threat-analytics
 
 Replace `YOUR-USERNAME` with your GitHub username.
 
-Alternatively, download the repository as a ZIP file and open the extracted folder in VS Code.
-
 ### 2. Create a virtual environment
 
-On Windows, open the VS Code terminal and run:
+```bash
+python -m venv .venv
+```
+
+Activate it in PowerShell:
 
 ```powershell
-py -3.13 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+Alternatively, use Command Prompt:
+
+```cmd
+.venv\Scripts\activate.bat
 ```
 
 ### 3. Install dependencies
 
-If PowerShell activation is unavailable, install packages using the environment's Python executable directly:
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
 ### 4. Run the dashboard
 
-```powershell
-.\.venv\Scripts\python.exe -m streamlit run app.py
+```bash
+python -m streamlit run app.py
 ```
 
-Open the local URL displayed in the terminal, normally:
+Open the local URL displayed in the terminal, usually:
 
-`http://localhost:8501`
+http://localhost:8501
 
-## Dataset
+## 📁 Project Structure
 
-The initial version generates 1,500 synthetic security events for demonstration purposes.
+```text
+cybersecurity-threat-analytics/
+├── app.py
+├── requirements.txt
+├── data/
+├── src/
+├── reports/
+├── .gitignore
+└── README.md
+```
 
-The generated records include:
-
-- Event timestamps
-- Event types
-- Source IP addresses
-- Usernames
-- Severity levels
-- Investigation statuses
-
-The synthetic dataset enables dashboard development without requiring access to confidential organizational logs.
-
-### Using a CSV Dataset
-
-The current dashboard expects the following columns:
-
-| Column | Description |
+| File or folder | Description |
 |---|---|
-| `timestamp` | Date and time of the event |
-| `event_type` | Type of security event |
-| `source_ip` | Source IP address |
-| `username` | Associated account |
-| `severity` | Event severity |
-| `status` | Investigation status |
+| `app.py` | Main Streamlit dashboard |
+| `requirements.txt` | Project dependencies |
+| `data/` | Security event datasets |
+| `src/` | Supporting analysis modules |
+| `reports/` | Exported analysis and reports |
+| `.gitignore` | Excludes virtual environments and sensitive files |
+| `README.md` | Project documentation |
 
-Public datasets may use different schemas and require preprocessing before they can be analyzed by this dashboard.
+## 🔐 Data Security
 
-## Planned Improvements
+- Uses synthetic security events for initial development.
+- Runs locally by default.
+- Does not require live network scanning or offensive security tools.
+- Uses only authorised datasets for analysis.
+- Excludes confidential logs, credentials, and sensitive information from public repositories.
 
-- Integrate a real public cybersecurity dataset, such as CIC-IDS2017.
-- Build a dedicated data-cleaning and preprocessing pipeline.
-- Add attack-category and network-traffic analysis.
-- Improve anomaly detection and investigation prioritization.
-- Generate downloadable security analysis reports.
-- Separate data processing, analysis, and dashboard components into modules.
-- Add automated tests and data validation.
-- Improve the dashboard layout and visual design.
+This project is intended for learning and portfolio demonstration. It is not a replacement for an enterprise Security Information and Event Management (SIEM) platform.
 
-## Security and Limitations
+## 🔮 Future Improvements
 
-- Synthetic events are not real security incidents.
-- A high event count does not automatically indicate malicious activity.
-- Frequent source IP addresses should not automatically be classified as attackers.
-- Analysis results depend on data quality, labeling, and preprocessing.
-- Only upload datasets you are authorized to use.
-- Do not publish confidential logs, credentials, or sensitive organizational information.
+- Import and validate external security event datasets.
+- Detect repeated failed logins and unusual event patterns.
+- Analyse suspicious source IP addresses and event frequency.
+- Add configurable severity thresholds and detection rules.
+- Generate downloadable incident summary reports.
+- Add investigation status tracking.
+- Expand automated testing and data validation.
 
-This project is intended for educational purposes and portfolio development. It is not a replacement for a production SIEM or a fully operational security monitoring system.
+## 🎯 Learning Objectives
 
-## Author
+This project explores:
+
+- Python programming and data analytics
+- Cybersecurity event monitoring
+- Threat analysis and incident investigation
+- Data cleaning and visualisation
+- Interactive dashboard development
+- Git and GitHub version control
+
+## 👨‍💻 Author
 
 **Kaushik Goundar**
 
-IT Security Engineer | Cybersecurity | Network & Systems Security
+---
+
+*Turning security event data into actionable insights.*
